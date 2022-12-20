@@ -4,7 +4,7 @@
 
 ## General Information
 
-The (https://en.wikipedia.org/wiki/Standard_map)[standard Chirikov map] is a
+The [standard Chirikov map](https://en.wikipedia.org/wiki/Standard_map) is a
 symplectic transformation of the phase plane given by formula
 
 	(x, y) ↦ (x+y+ε⋅sin(x), y+ε⋅sin(x)),
@@ -29,9 +29,8 @@ such that
 	distance(T²ⁿ(z), Tⁿ(z))<ρ
 
 for a small positive ρ. The larger n, the darker the pixel. This method is
-inspired by the
-(https://en.wikipedia.org/wiki/Floyd%27s_cycle-finding_algorithm)[Floyd’s cycle
-detection algorithm].
+inspired by the [Floyd’s cycle detection
+algorithm](https://en.wikipedia.org/wiki/Floyd%27s_cycle-finding_algorithm).
 
 ---
 
@@ -74,5 +73,5 @@ Increment of ε | `STEP` | `.001`
 © Anton Shvetz, 2022
 
 This project is licensed under the
-(CC-BY-SA-4.0 License)[https://creativecommons.org/licenses/by-sa/4.0/deed].
+[CC-BY-SA-4.0 License](https://creativecommons.org/licenses/by-sa/4.0/deed).
 
