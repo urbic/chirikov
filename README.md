@@ -39,7 +39,7 @@ algorithm](https://en.wikipedia.org/wiki/Floyd%27s_cycle-finding_algorithm).
 The building of the video is a lengthy process. It took us several months
 intermittently on CPU Intel Core i9-9900K.
 
-The UNIX-like operating system is required. Prerequirements:
+The UNIX-like operating system is required. Prerequisites:
 
 * java ≥ 11
 * make
