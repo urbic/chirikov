@@ -9,7 +9,7 @@
 The [standard Chirikov map](https://en.wikipedia.org/wiki/Standard_map) is a
 symplectic transformation of the phase plane given by formula
 
-	(x, y) ↦ (x+y+ε⋅sin(x), y+ε⋅sin(x)),
+> (x, y) ↦ (x+y+ε⋅sin(x), y+ε⋅sin(x)),
 
 where ε is a small parameter. This mappping is correctly restricted to a torus
 when x, y ∈ \[-π; π) are taken modulo 2π.
@@ -28,7 +28,7 @@ The chaoticity of the orbit is calculated as follows. Let z be the starting
 point of the orbit, T be the Chirikov map, n be the smallest natural number
 such that
 
-	distance(T²ⁿ(z), Tⁿ(z))<ρ
+> distance(T²ⁿ(z), Tⁿ(z))<ρ
 
 for a small positive ρ. The larger n, the darker the pixel. This method is
 inspired by the [Floyd’s cycle detection
