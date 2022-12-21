@@ -3,12 +3,11 @@ public class SCM
 {
 	public static void main(final String[] args)
 	{
-		var epsilon=Double.parseDouble(args[0]);
-		//var threads=args.length==2? Integer.parseInt(args[1]): 8;
-		int threads=8;
+		double epsilon=Double.parseDouble(args[0]);
+		int threads=0;
 		if(args.length>0)
 			threads=Integer.parseInt(args[1]);
-		new SCM(epsilon, .001, 1200, threads).run();
+		new SCM(epsilon, .001D, 1200, threads).run();
 	}
 
 	public SCM(final double epsilon, final double radius, final int density, final int threads)
@@ -18,7 +17,7 @@ public class SCM
 		this.density=density;
 		this.threads=threads;
 		this.fn=String.format(java.util.Locale.US, "SCM-%1.3f.png", epsilon);
-		this.treshold=(int)(15.*Math.log(256.)/radius);
+		this.treshold=(int)(15.D*Math.log(256.D)/radius);
 	}
 
 	public void run()
@@ -42,8 +41,8 @@ public class SCM
 						final int j_=j;
 						final double[] z=new double[]
 							{
-								2.*Math.PI*i_/density-Math.PI,
-								2.*Math.PI*(density-j_)/density-Math.PI,
+								2.D*Math.PI*i_/density-Math.PI,
+								2.D*Math.PI*(density-j_)/density-Math.PI,
 							};
 						final double value=Math.scalb(iterate(z), 8);
 						final double[] pixel=new double[] {value};
@@ -62,7 +61,7 @@ public class SCM
 					final double[] z=new double[]
 						{
 							-Math.PI,
-							2.*Math.PI*(density-j_)/density-Math.PI,
+							2.D*Math.PI*(density-j_)/density-Math.PI,
 						};
 					final double value=Math.scalb(iterate(z), 8);
 					final double[] pixel=new double[] {value};
@@ -100,14 +99,14 @@ public class SCM
 
 	private static double modulo(double x, final double mod)
 	{
-		while(x<0.)
+		while(x<0.D)
 			x+=mod;
 		return x % mod;
 	}
 
 	private static double normalize(final double x)
 	{
-		return modulo(x+Math.PI, 2.*Math.PI)-Math.PI;
+		return modulo(x+Math.PI, 2.D*Math.PI)-Math.PI;
 	}
 
 	private double[] map(final double[] z)
@@ -124,7 +123,7 @@ public class SCM
 	{
 		double dx=Math.abs(a[0]-b[0]);
 		double dy=Math.abs(a[1]-b[1]);
-		return Math.hypot(Math.min(dx, 2.*Math.PI-dx), Math.min(dy, 2.*Math.PI-dy));
+		return Math.hypot(Math.min(dx, 2.D*Math.PI-dx), Math.min(dy, 2.D*Math.PI-dy));
 	}
 
 	private double iterate(final double[] z)
@@ -138,9 +137,9 @@ public class SCM
 			t=map(t);
 			h=map(map(h));
 			if(dist(t, h)<radius)
-				return Math.exp(-n*radius/15.);
+				return Math.exp(-n*radius/15.D);
 			if(n>treshold)
-				return 0.;
+				return 0.D;
 			n++;
 		}
 	}
@@ -151,11 +150,12 @@ public class SCM
 		final long currentTime=System.currentTimeMillis();
 		final long timeElapsed=currentTime-startTime;
 		final long timeRemained=progress==0?
-			Long.MAX_VALUE: (long)(timeElapsed*((double)(density)/(double)(progress)-1.));
+			Long.MAX_VALUE:
+			(long)(timeElapsed*((double)(density)/(double)(progress)-1.D));
 		final var eta=java.time.Duration.ofMillis(timeRemained);
 		System.out.printf("\u001B[2K\r%s: %.2f%%\tETA: %02d:%02d:%02d %s",
 			fn,
-			100.0*progress/density,
+			100.D*progress/density,
 			eta.toHoursPart(),
 			eta.toMinutesPart(),
 			eta.toSecondsPart(),
@@ -164,10 +164,9 @@ public class SCM
 		System.out.flush();
 	}
 
-	//private int density=1024;
 	private int density=1200;
-	private double radius=0.01;
-	private double epsilon=1.;
+	private double radius=0.01D;
+	private double epsilon=1.D;
 	private int progress=0;
 	private final String fn;
 	private long startTime;
