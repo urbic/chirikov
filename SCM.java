@@ -3,11 +3,24 @@ public class SCM
 {
 	public static void main(final String[] args)
 	{
-		double epsilon=Double.parseDouble(args[0]);
-		int threads=0;
-		if(args.length>0)
-			threads=Integer.parseInt(args[1]);
-		new SCM(epsilon, .001D, 1200, threads).run();
+		try
+		{
+			double epsilon=Double.parseDouble(args[0]);
+			double radius=Double.parseDouble(args[1]);
+			int density=Integer.parseInt(args[2]);
+			int threads=Integer.parseInt(args[3]);
+			new SCM(epsilon, radius, density, threads).run();
+		}
+		catch(final Exception ex)
+		{
+			System.out.println("Usage:\n\tjava SCM [parameters]\n"
+					+"Parameters:\n"
+					+"\tepsilon\n"
+					+"\trho\n"
+					+"\tdensity\n"
+					+"\tthreads\n"
+				);
+		}
 	}
 
 	public SCM(final double epsilon, final double radius, final int density, final int threads)

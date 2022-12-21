@@ -1,5 +1,7 @@
 # The Standard Chirikov Map Visualization
 
+![SAMPLE](SAMPLE.png)
+
 ---
 
 ## General Information
@@ -10,7 +12,7 @@ symplectic transformation of the phase plane given by formula
 	(x, y) ↦ (x+y+ε⋅sin(x), y+ε⋅sin(x)),
 
 where ε is a small parameter. This mappping is correctly restricted to a torus
-when x, y ∈ [-π; π) are taken modulo 2π.
+when x, y ∈ \[-π; π) are taken modulo 2π.
 
 For ε=0 the map is linear and only periodic and quasiperiodic orbits are
 possible and the map is integrable. With a non-zero value of ε, some of the
@@ -34,10 +36,10 @@ algorithm](https://en.wikipedia.org/wiki/Floyd%27s_cycle-finding_algorithm).
 
 ---
 
-## Building Video
+## Assembling Video
 
-The building of the video is a lengthy process. It took us several months
-intermittently on CPU Intel Core i9-9900K.
+The assembling of the video is a lengthy process. It took us several months
+intermittently on CPU Intel Core i9-9900K (video dimensions 1200, 6000 frames).
 
 The UNIX-like operating system is required. Prerequisites:
 
@@ -46,15 +48,14 @@ The UNIX-like operating system is required. Prerequisites:
 * ffmpeg
 
 Simply run
-```
+```shell
 make
 ```
 
 The build can be interrupted and restarted at any time.
 
-If the building is overheating your CPU, you can limit the number of threads
-used:
-```
+If the build is overheating your CPU, you can limit the number of threads used:
+```shell
 make THREADS=4
 ```
 
@@ -67,6 +68,8 @@ The video frame rate| `FRAMERATE` | `30`
 Initial value of ε | `INITIAL` | `0`
 Final value of ε | `FINAL` | `6`
 Increment of ε | `STEP` | `.001`
+The value of ρ | `RHO` | `.001`
+The density (video width and height) | `DENSITY` | `1200`
 
 ## Copyright and License
 
