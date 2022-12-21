@@ -18,7 +18,7 @@ orbits exhibit chaotic behavior.
 
 As ε increases, the measure of the set of points with chaotic orbits increases.
 
-[The video](http://mech.math.msu.su/~shvetz/chirikov/) visualizes this process.
+The [video](http://mech.math.msu.su/~shvetz/chirikov/) visualizes this process.
 Each frame corresponds to the next increasing value of ε. Each pixel of the
 frame is shaded according to the chaoticity of the corresponding point’s orbit.
 
