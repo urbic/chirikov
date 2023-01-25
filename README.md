@@ -8,29 +8,26 @@
 
 The [standard Chirikov map](https://en.wikipedia.org/wiki/Standard_map) is a
 symplectic transformation of the phase plane given by formula
-
-> (x, y) ↦ (x+y+ε⋅sin(x), y+ε⋅sin(x)),
+$$(x,y)\mapsto(x+y+\varepsilon\sin x,y+\varepsilon\sin x)$$
 
 where ε is a small parameter. This mappping is correctly restricted to a torus
-when x, y ∈ \[-π; π) are taken modulo 2π.
+when $x,y\in[-\pi;\pi)$ are taken modulo $2\pi$.
 
-For ε=0 the map is linear and only periodic and quasiperiodic orbits are
-possible and the map is integrable. With a non-zero value of ε, some of the
+For $\varepsilon=0$ the map is linear and only periodic and quasiperiodic orbits are
+possible and the map is integrable. With a non-zero value of $\varepsilon$, some of the
 orbits exhibit chaotic behavior.
 
 As ε increases, the measure of the set of points with chaotic orbits increases.
 
 The [video](http://mech.math.msu.su/~shvetz/chirikov/) visualizes this process.
-Each frame corresponds to the next increasing value of ε. Each pixel of the
+Each frame corresponds to the next increasing value of $\varepsilon$. Each pixel of the
 frame is shaded according to the chaoticity of the corresponding point’s orbit.
 
-The chaoticity of the orbit is calculated as follows. Let z be the starting
-point of the orbit, T be the Chirikov map, n be the smallest natural number
+The chaoticity of the orbit is calculated as follows. Let $z$ be the starting
+point of the orbit, $T$ be the Chirikov map, $n$ be the smallest natural number
 such that
-
-> distance(T²ⁿ(z), Tⁿ(z))<ρ
-
-for a small positive ρ. The larger n, the darker the pixel. This method is
+$$\operatorname{distance}(T^{2n}(z),T^n(z))<\rho$$
+for a small positive $\rho$. The larger $n$, the darker the pixel. This method is
 inspired by the [Floyd’s cycle detection
 algorithm](https://en.wikipedia.org/wiki/Floyd%27s_cycle-finding_algorithm).
 
@@ -65,15 +62,15 @@ Description | Variable | Default value
 ----------- | -------- | -------------
 The number of threads | `THREADS` | `0` (thread pool uses all available processors)
 The video frame rate| `FRAMERATE` | `30`
-Initial value of ε | `INITIAL` | `0`
-Final value of ε | `FINAL` | `6`
-Increment of ε | `STEP` | `.001`
-The value of ρ | `RHO` | `.001`
+Initial value of $\varepsilon$ | `INITIAL` | `0`
+Final value of $\varepsilon$ | `FINAL` | `6`
+Increment of $\varepsilon$ | `STEP` | `.001`
+The value of $\rho$ | `RHO` | `.001`
 The density (video width and height) | `DENSITY` | `1200`
 
 ## Copyright and License
 
-© Anton Shvetz, 2022
+© Anton Shvetz, 2022—2023
 
 This project is licensed under the
 [CC-BY-SA-4.0 License](https://creativecommons.org/licenses/by-sa/4.0/deed).
