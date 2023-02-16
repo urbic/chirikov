@@ -17,7 +17,7 @@ For $\varepsilon=0$ the map is linear and only periodic and quasiperiodic orbits
 possible and the map is integrable. With a non-zero value of $\varepsilon$, some of the
 orbits exhibit chaotic behavior.
 
-As ε increases, the measure of the set of points with chaotic orbits increases.
+As $\varepsilon$ increases, the measure of the set of points with chaotic orbits increases.
 
 The [video](http://mech.math.msu.su/~shvetz/chirikov/) visualizes this process.
 Each frame corresponds to the next increasing value of $\varepsilon$. Each pixel of the
