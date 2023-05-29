@@ -26,7 +26,7 @@ frame is shaded according to the chaoticity of the corresponding point’s orbit
 The chaoticity of the orbit is calculated as follows. Let $z$ be the starting
 point of the orbit, $T$ be the Chirikov map, $n$ be the smallest natural number
 such that
-$$\operatorname{distance}(T^{2n}(z),T^n(z))<\rho$$
+$$\mathrm{distance}(T^{2n}(z),T^n(z))<\rho$$
 for a small positive $\rho$. The larger $n$, the darker the pixel. This method is
 inspired by the [Floyd’s cycle detection
 algorithm](https://en.wikipedia.org/wiki/Floyd%27s_cycle-finding_algorithm).
