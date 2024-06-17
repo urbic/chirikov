@@ -10,7 +10,7 @@ The [standard Chirikov map](https://en.wikipedia.org/wiki/Standard_map) is a
 symplectic transformation of the phase plane given by formula
 $$(x,y)\mapsto(x+y+\varepsilon\sin x,y+\varepsilon\sin x)$$
 
-where ε is a small parameter. This mappping is correctly restricted to a torus
+where ε is a small parameter. This mapping is correctly restricted to a torus
 when $x,y\in[-\pi;\pi)$ are taken modulo $2\pi$.
 
 For $\varepsilon=0$ the map is linear and only periodic and quasiperiodic orbits are
